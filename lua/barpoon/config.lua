@@ -29,7 +29,7 @@ config.defaults = {
 
 	pin_icon = "󰐃", -- Icon used for the pin button  NOTE: This button will harpoon the tab, not the built-in pin feature from bufferline or barbar
 
-	-- list of labels to show per tab in order, useful for displaying Harpoon key maps to match each corresponding tab
+	-- list of labels to correspond with your harpoon keymaps
 	key_labels = nil, -- eg. 'hjkl;HJKL'
 
 	--NOTE: config exlusive to bufferline.nvim

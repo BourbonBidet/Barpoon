@@ -78,36 +78,6 @@ In order to use Barpoon you must first install either [bufferline.nvim](https://
 }
 ```
 
-### [packer.nvim](https://github.com/wbthomason/packer.nvim)
-
-```lua 
--- Minimal installation
-
--- NOTE: Pick one
-use 'akinsho/bufferline.nvim'
--- use 'romgrk/barbar.nvim'
---
-
---Harpoon
-use "nvim-lua/plenary.nvim" -- don't forget to add this one if you don't have it yet!
-use {
-    "ThePrimeagen/harpoon",
-    branch = "harpoon2",
-}
-
--- Barpoon
-use {
-  'BourbonBidet/Barpoon',
-  requires = {
-    {'akinsho/bufferline.nvim'}, -- Pick one
-    -- {'romgrk/barbar.nvim'},
-
-    {"ThePrimeagen/harpoon"},
-  }
-}
-
-```
-
 ## Configuration
 
 The majority of your config will be done in either your [Harpoon](https://github.com/ThePrimeagen/harpoon/tree/harpoon2) config or your bufferline config.
@@ -124,15 +94,14 @@ The majority of your config will be done in either your [Harpoon](https://github
 
 	pin_icon = "󰐃", -- Icon used for the pin button  NOTE: This button will harpoon the tab, not the built-in pin feature from bufferline or barbar
 
-	-- list of labels to show per tab, useful for displaying Harpoon key maps to match each corresponding tab
-	key_labels = nil, -- eg. {'h', 'j', 'k', 'l', ';', 'H', 'J', 'K', 'L'}. 
-
+	-- list of labels to correspond with your harpoon keymaps
+	key_labels = nil, -- eg. 'hjkl;HJKL'
 
 	--NOTE: config exlusive to bufferline.nvim
 	bufferline = { -- Config options specific to bufferline.nvim
 
 		hide_threshold = 0, -- Hide bufferline when less than or equal to hide_tab_amount. (Bufferline's default is 1, but for Barpoon it makes sense to show all Harpoon'd tabs)
-				     -- NOTE: Must also set 'always_show_bufferline = false' and 'auto_toggle_bufferline = true' in your bufferline config
+		-- INFO: Must also set 'always_show_bufferline = false' and 'auto_toggle_bufferline = true' in your bufferline config
 	},
 
 	--NOTE: config exclusive to barbar.nvim
@@ -155,6 +124,8 @@ The majority of your config will be done in either your [Harpoon](https://github
 ### User Commands
 
 - `BaroonRestoreTab`: Reopens last closed tab and adds it back to harpoon list (does not apply to temporary tabs)
+
+- `BarpoonToggle`: Toggle the bufferline
 
 - `BarpoonHide`: Hides the bufferline
 

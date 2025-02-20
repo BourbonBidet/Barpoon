@@ -76,18 +76,21 @@ local function setup_user_commands()
 		else
 			enable_barpoon()
 		end
-	end, { desc = "Hide Barpoon bufferline" })
+	end, { desc = "Toggle Barpoon bufferline" })
+
 	vim.api.nvim_create_user_command("BarpoonHide", function()
 		if enabled then
 			disable_barpoon()
 			utils.notify("Barpoon hidden.", vim.log.levels.INFO)
 		end
 	end, { desc = "Hide Barpoon bufferline" })
+
 	vim.api.nvim_create_user_command("BarpoonShow", function()
 		if not enabled then
 			enable_barpoon()
 		end
 	end, { desc = "Show Barpoon bufferline" })
+
 	vim.api.nvim_create_user_command("BarpoonRestoreTab", function()
 		state.restore_buffer()
 	end, { desc = "Restore the last closed tab and add it to the Harpoon list" })

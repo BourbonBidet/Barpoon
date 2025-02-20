@@ -53,13 +53,13 @@ The majority of your config will be done in either your harpoon config or your b
 
 		pin_icon = "󰐃", -- Icon used for the pin button  NOTE: This button will harpoon the tab, not the built-in pin feature from bufferline or barbar
 
-		-- list of labels for each tab in order, useful for displaying Harpoon key maps to match each corresponding tab
-		key_labels = nil, -- eg. {'h', 'j', 'k', 'l', ';', 'H', 'J', 'K', 'L'}.
+		-- list of labels to correspond with your harpoon keymaps
+		key_labels = nil, -- eg. 'hjkl;HJKL'
 
 		--NOTE: config exlusive to bufferline.nvim
 		bufferline = { -- Config options specific to bufferline.nvim
 
-			hide_threshold = 0, -- Hide bufferline when less than or equal to hide_tab_amount. (bufferline.nvim's default is 1, but for Barpoon it makes sense to show all Harpoon'd tabs)
+			hide_threshold = 0, -- Hide bufferline when less than or equal to hide_tab_amount. (Bufferline's default is 1, but for Barpoon it makes sense to show all Harpoon'd tabs)
 			-- INFO: Must also set 'always_show_bufferline = false' and 'auto_toggle_bufferline = true' in your bufferline config
 		},
 
@@ -85,6 +85,8 @@ USAGE				         		*barpoon-usage*
 USER COMMANDS						*barpoon-commands*
 
 - `BaroonRestoreTab`: Reopens last closed tab and adds it back to harpoon list (does not apply to temporary tabs)
+
+- `BarpoonToggle`: Toggle the bufferline
 
 - `BarpoonHide`: Hides the bufferline
 
