@@ -1,0 +1,93 @@
+==============================================================================
+CONTENTS                                      *barpoon*
+*barpoon-contents*
+
+Introduction..............................: |barpoon-introduction|
+Installation..............................: |barpoon-installation
+Configuration.............................: |barpoon-configuration|
+Usage.....................................: |barpoon-usage|
+Commands..................................: |barpoon-commands
+
+
+==============================================================================
+INTRODUCTION				        	*barpoon-introduction*
+
+Barpoon allows you to use Harpoon to control bufferline plugins `bufferline.nvim` or `barbar.nvim`.
+This means your tabs and tab order are managed by your Harpoon list, 
+and you can also add, remove, reorder and navigate your Harpoon list with your mouse using the bufferline.
+
+
+==============================================================================
+INSTALLATION				        	*barpoon-installation
+
+`lazy.nvim`
+>lua
+	-- Minimal installation
+	{
+	  'BourbounBidet/Barpoon',
+	  dependencies = {
+	    { 'ThePrimeagen/harpoon',
+		    branch = 'harpoon2',
+	    },
+
+		    -- NOTE: Pick one
+	    {'akinsho/bufferline.nvim'},
+	    -- {'romgrk/barbar.nvim'}, 
+	  },
+	  opts = {}, -- Config here
+	}
+<
+
+==============================================================================
+CONFIGURATION				         	*barpoon-configuration*
+
+The majority of your config will be done in either your harpoon config or your bufferline config.
+
+>lua
+	{
+		plugin = nil, -- nil | 'bufferline' | 'barbar' : The bufferline plugin to use, will automatically detect installed plugin if set to nil
+
+		open_tab_for_current_buffer = true, -- Open a tab while viewing a buffer that's not harpooned, and then close it when leaving the buffer
+
+		show_pin_button_on_temp_tab = true, -- Replace the close button with a pin button on the temp tab, to add it to harpoon list
+
+		pin_icon = "󰐃", -- Icon used for the pin button  NOTE: This button will harpoon the tab, not the built-in pin feature from bufferline or barbar
+
+		-- list of labels for each tab in order, useful for displaying Harpoon key maps to match each corresponding tab
+		key_labels = nil, -- eg. {'h', 'j', 'k', 'l', ';', 'H', 'J', 'K', 'L'}.
+
+		--NOTE: config exlusive to bufferline.nvim
+		bufferline = { -- Config options specific to bufferline.nvim
+
+			hide_threshold = 0, -- Hide bufferline when less than or equal to hide_tab_amount. (bufferline.nvim's default is 1, but for Barpoon it makes sense to show all Harpoon'd tabs)
+			-- INFO: Must also set 'always_show_bufferline = false' and 'auto_toggle_bufferline = true' in your bufferline config
+		},
+
+		--NOTE: config exclusive to barbar.nvim
+		barbar = {
+			temp_tab_color = "#87d7af", -- Foregrond color for the temporary tab opened while viewing a file not in the harpoon list
+		},
+	}
+<
+
+==============================================================================
+USAGE				         		*barpoon-usage*
+
+- `Adding a tab`: Adding items to the Harpoon list or clicking the pin button adds them to the tab bar.
+
+- `Managing tabs`: Use the Harpoon quick menu or drag tabs using the mouse to reorder tabs.
+
+- `Removing tabs`: Use the Harpoon quick menu or click the close button to remove a tab.
+
+- `Temporary tabs`: By default, a tab opens for the current file even if it's not pinned (configurable)
+
+==============================================================================
+USER COMMANDS						*barpoon-commands*
+
+- `BaroonRestoreTab`: Reopens last closed tab and adds it back to harpoon list (does not apply to temporary tabs)
+
+- `BarpoonHide`: Hides the bufferline
+
+- `BarpoonShow`: Shows the bufferline if hidden
+
+

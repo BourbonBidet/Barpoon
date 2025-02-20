@@ -1,0 +1,51 @@
+TODO.md
+
+# Ignore Neovim backup, swap, and undo files
+*.swp
+*.swo
+*.swn
+*.bak
+*.un~
+*.undo
+
+# Ignore Lua compiled bytecode files
+*.luac
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+*.cache
+
+# Ignore build artifacts if using a build system
+/build/
+/dist/
+/out/
+
+# Ignore LuaLS (Lua Language Server) generated metadata files
+/.luarc.json
+/.luarc.jsonc
+/.luacheckrc
+/.luacov
+
+# Ignore packer.nvim plugin snapshots and state files
+plugin/packer_compiled.lua
+
+# Ignore Luarocks (if used for dependencies)
+luarocks.lock
+.rocks/
+
+# Ignore any personal or environment-specific files
+.env
+local_settings.lua
+
+# Ignore Neovim plugin testing artifacts (for plenary.nvim, busted, etc.)
+tests/output/
+tests/results/
+.coverage
+luacov.*
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore Windows system files
+Thumbs.db
