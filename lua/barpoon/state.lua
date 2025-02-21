@@ -27,7 +27,6 @@ local function update_state()
 	local harpoon_list = harpoon_wrapper.get_items()
 	local removed_buf_names = {}
 	for _, v in ipairs(harpoon_list) do
-		-- print(vim.inspect(v))
 		local bufnr = vim.fn.bufnr(utils.to_exact_name(v.value))
 
 		if bufnr == -1 then

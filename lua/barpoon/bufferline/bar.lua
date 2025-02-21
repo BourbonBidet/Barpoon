@@ -63,7 +63,6 @@ end
 
 ---@param bufnr integer
 local function handle_button_click(bufnr, _, _)
-	-- print("clicked: ", bufnr)
 	local temp = state.get().temp_bufnr
 	if config.settings.show_pin_button_on_temp_tab and temp ~= nil and bufnr == temp then
 		events.emit(bar.events.ON_PIN_TAB, bufnr)

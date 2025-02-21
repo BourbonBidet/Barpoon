@@ -9,7 +9,7 @@
 
 
 
-Barpoon allows you to use Harpoon to control bufferline plugins [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) or [barbar.nvim](https://github.com/romgrk/barbar.nvim).
+Barpoon allows you to use [Harpoon](https://github.com/ThePrimeagen/harpoon/tree/harpoon2) to control bufferline plugins [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) or [barbar.nvim](https://github.com/romgrk/barbar.nvim).
 This means your tabs and tab order are managed by your Harpoon list, 
 and you can also add, remove, reorder and navigate your Harpoon list with your mouse using the bufferline.
 
